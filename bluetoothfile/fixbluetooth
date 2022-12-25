@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $(whoami) != "root" ]; then
+  echo "You need to run it with sudo"
+  exit 1
+fi
+
+sudo cp rtl8761b_fw.bin /usr/lib/firmware/rtl_bt/rtl8761b_fw.bin
+sudo cp rtl8761b_config.bin /usr/lib/firmware/rtl_bt/rtl8761b_config.bin
+
+echo "bluetooth config file recovered, you need to replugin your devices"

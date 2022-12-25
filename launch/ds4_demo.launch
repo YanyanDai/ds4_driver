@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="addr" default="" />
+  <remap from="/set_feedback" to="/joy/set_feedback" />
+  <include file="$(find ds4_driver)/launch/ds4_driver.launch" >
+    <arg name="addr" value="$(arg addr)" />
+    <arg name="use_standard_msgs" value="true" />
+    <arg name="autorepeat_rate" value="20" />
+  </include>
+</launch>
